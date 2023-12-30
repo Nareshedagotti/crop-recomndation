@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Crop Recommendation</h2>
+
+    <form id="predictionForm" action="/predict" method="post">
+        <label for="N">Nitrogen (N):</label>
+        <input type="number" name="N" required>
+
+        <label for="P">Phosphorus (P):</label>
+        <input type="number" name="P" required>
+
+        <label for="K">Potassium (K):</label>
+        <input type="number" name="K" required>
+
+        <label for="temperature">Temperature:</label>
+        <input type="number" name="temperature" required>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" name="humidity" required>
+
+        <label for="ph">pH:</label>
+        <input type="number" name="ph" step="0.1" required>
+
+        <label for="rainfall">Rainfall:</label>
+        <input type="number" name="rainfall" required>
+
+        <button type="submit">Get Crop Recommendation</button>
+    </form>
+</body>
+</html>
